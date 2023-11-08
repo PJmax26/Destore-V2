@@ -1,11 +1,13 @@
-// import {FiHeart} from 'react-icons/fi'
-// import {AiOutlineShoppingCart, AiOutlineUserAdd} from 'react-icons/ai'
+import {AiOutlineShoppingCart, AiOutlineUserAdd} from 'react-icons/ai'
 
 const User = () => {
   return (
     <div className="user">
-        {/* <FiHeart />
-        <AiOutlineShoppingCart /> */}
+      <div className="cart">
+        <span>7</span>
+        <AiOutlineShoppingCart className='icon' />
+      </div>
+      <AiOutlineUserAdd className='icon' />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import './Sidebar.css'
 import Category from './Category'
 import Price from './Price'
+import Gender from './Gender'
 
 const Sidebar = ({ search, setSearch, category, setCategory, hundleCategoryCheck, nav, closenav }) => {
   return (
@@ -21,6 +22,7 @@ const Sidebar = ({ search, setSearch, category, setCategory, hundleCategoryCheck
             category = {category}
             setCategory = {setCategory}
             />
+            <Gender />
             <Price />
         </aside>
     </>

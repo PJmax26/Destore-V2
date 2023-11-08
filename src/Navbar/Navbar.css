@@ -47,6 +47,30 @@ header{
     display: none;
 }
 
+.user{
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.user .icon{
+    color: var(--dark);
+}
+
+.cart{
+    position: relative;
+}
+
+.cart span{
+    position: absolute;
+    padding: 2px 7px;
+    border-radius: 1rem;
+    background: #fe0241;
+    color: white;
+    top: -50%;
+    left: -50%;
+}
+
 @media screen and (max-width: 700px) {
     .menu_btn{
         display: block;
@@ -59,13 +83,22 @@ header{
     .logo{
         font-size: 1.7rem;
         margin-left: 1rem;
+        display: none;
     }
     
     .logo span{
         font-size: 3.5rem;
     }
 
+    .navLinks{
+        margin-left: 1rem;
+        gap: 1rem;
+    }
+
     .navLinks .link{
-        font-size: 15px;
+        font-size: 13px;
+    }
+    .user{
+        gap: 1rem;
     }
 }

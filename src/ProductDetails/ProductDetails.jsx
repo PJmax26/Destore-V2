@@ -2,34 +2,40 @@ import { useParams } from 'react-router-dom'
 import './ProductDetails.css'
 import { Link } from 'react-router-dom'
 import Ratings from '../Components/Ratings'
+import {FiHeart} from 'react-icons/fi'
+import {AiOutlineShareAlt} from 'react-icons/ai'
+import Navbar from '../Navbar/Navbar'
 
-const ProductDetails = ({products}) => {
+const ProductDetails = ({products, shownav}) => {
 
   const {id} = useParams()
   const product = products.find(product => (product.id).toString() === id)
 
   return (
-    <div className="main product_details">
+    <>
+      <Navbar shownav = {shownav} />
+      <div className="product_details">
       <div className="top">
         <img src={product.img} alt="Img" />
 
         <div className="right">
-        <div className="product_text">
-          <div className="title">{product.title}</div>
-          <div className="price">
-            $
-            <del>{product.preprice}</del>
-            <div className="new_price">{product.newprice}</div>
+          <div className="product_text">
+            <div className="title">{product.title}</div>
+            <Ratings />
+            <div className="price">
+              $
+              <del>{product.preprice}</del>
+              <div className="new_price">{product.newprice}</div>
+            </div>
+            <div className="description">{product.description}</div>
           </div>
-          <div className="description">{product.description}</div>
-        </div>
 
-        <div className="actions">
-          <div className="btn">Add to cart</div>
-          <div className="heart">h</div>
-          <div className="share">s</div>
+          <div className="actions">
+            <div className="btn">Add to cart</div>
+            <FiHeart className='icon'/>
+            <AiOutlineShareAlt className='icon'/>
+          </div>
         </div>
-      </div>
 
       </div>
 
@@ -40,7 +46,7 @@ const ProductDetails = ({products}) => {
             products.map(({id, img, title, preprice, newprice, description, category}) => (
               category === product.category ? (
                 <Link to={`/products/${id}`}>
-                  <div className='product' key={id} id={id}>
+                  <div className='related_product' key={id} id={id}>
                     <img src={img} alt=""/>
                     <div className="product_info">
                       <div className="title">{title}</div>
@@ -62,9 +68,9 @@ const ProductDetails = ({products}) => {
           }
         </div>
       </div>
-
-      
     </div>
+    </>
+    
   )
 }
 

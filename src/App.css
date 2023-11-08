@@ -7,7 +7,7 @@
 
 :root{
   --teal: teal;
-  --gold: #eaff00;
+  --gold: #b8c807;
   --dark: #2d2c2c;
 }
 
@@ -37,7 +37,11 @@ a{
 .ratings{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.star{
+  color: var(--gold);
 }
 
 @media screen and (max-width: 1200px) {

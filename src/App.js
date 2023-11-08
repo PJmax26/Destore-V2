@@ -1,10 +1,9 @@
 import './App.css';
 import ProductDetails from './ProductDetails/ProductDetails'
-import Navbar from './Navbar/Navbar';
-import About from './Components/About';
+import Home from './Components/Home/Home';
 import Contact from './Components/Contact';
-import Products from './Products/Products'
-import Sidebar from './Sidebar/Sidebar';
+import Main from './Main';
+import Missing from './Components/Missing';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -41,25 +40,28 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar
-        shownav = {shownav}
-        />
-        <Sidebar
-          search = {search}
-          setSearch = {setSearch}
-          hundleCategoryCheck = {hundleCategoryCheck}
-          category = {category}
-          setCategory = {setCategory}
-          nav = {nav}
-          closenav = {closenav}
-        />
         <Routes>
-          <Route path = 'about' element = {<About />} />
-          <Route path = 'contact' element = {<Contact />} />
-          <Route path = '/' element = {<Products products = {results} />} />
-          <Route path = 'products/:id' element = {<ProductDetails
-          products = {products} 
+          <Route path = '/products' element = {
+            <Main 
+            shownav = {shownav}
+            search = {search}
+            setSearch = {setSearch}
+            hundleCategoryCheck = {hundleCategoryCheck}
+            category = {category}
+            setCategory = {setCategory}
+            nav = {nav}
+            closenav = {closenav}
+            products = {results}
+          />
+          } />
+          <Route path = '/' element = {<Home />} />
+          <Route path = '/contact' element = {<Contact />} />
+          <Route path = '/products/:id' element = {
+          <ProductDetails
+            products = {products}
+            shownav = {shownav}
            />} />
+           <Route path = '*' element = {<Missing />} />
         </Routes>
       </Router>
     </>

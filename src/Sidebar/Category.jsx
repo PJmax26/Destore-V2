@@ -13,17 +13,17 @@ const Category = ({ hundleCategoryCheck, category, setCategory}) => {
 
             <label className="sidebar_label_container">
                 <input type="radio" name='category_choise' />
-                <span className='checkmark'></span>Computing
+                <span className='checkmark'></span>Clothes
             </label>
 
             <label className="sidebar_label_container">
                 <input type="radio" name='category_choise' />
-                <span className='checkmark'></span>Fashion
+                <span className='checkmark'></span>Foot Wears
             </label>
 
             <label className="sidebar_label_container">
                 <input type="radio" name='category_choise' />
-                <span className='checkmark'></span>Home Appliances
+                <span className='checkmark'></span>Bags
             </label>
         </div>
     </div>
